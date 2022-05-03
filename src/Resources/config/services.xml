@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <!-- Every Add-On should hav a main service to manage and minify all following services -->
+        <service id="MoorlFormsExample\Core\Service\FbExampleService" public="true">
+            <argument type="service" id="MoorlForms\Core\Service\FbService"/>
+            <argument type="service" id="Shopware\Core\Framework\DataAbstractionLayer\DefinitionInstanceRegistry"/>
+            <argument type="service" id="Shopware\Core\System\SystemConfig\SystemConfigService"/>
+        </service>
+
+        <!-- Subscribe the ProductPageLoadedEvent -->
+        <service id="MoorlFormsExample\Storefront\Subscriber\ExampleSubscriber">
+            <argument type="service" id="MoorlFormsExample\Core\Service\FbExampleService"/>
+            <tag name="kernel.event_subscriber"/>
+        </service>
+
+        <!-- Example form types -->
+        <service id="MoorlFormsExample\Core\Content\Form\Type\FormTypeExample" public="true">
+            <tag name="moorl.fb.form" priority="0" />
+        </service>
+
+        <!-- Example form actions -->
+        <service id="MoorlFormsExample\Core\Content\Form\Action\FormActionExample" public="true">
+            <argument type="service" id="Shopware\Core\Content\Newsletter\SalesChannel\NewsletterSubscribeRoute"/>
+            <tag name="moorl.fb.action" priority="0" />
+        </service>
+
+        <!-- Example element types -->
+        <service id="MoorlFormsExample\Core\Content\Element\Type\ElementTypeExample" public="true">
+            <tag name="moorl.fb.element" priority="0" />
+        </service>
+    </services>
+</container>

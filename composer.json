@@ -1,0 +1,42 @@
+{
+    "name": "moorl/forms-example",
+    "description": "Form builder 2 | Example Add-On",
+    "version": "1.0.0",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "moori"
+        }
+    ],
+    "require": {
+        "shopware/core": "6.4.*",
+        "moorl/foundation": "1.4.*",
+        "moorl/forms": "*"
+    },
+    "type": "shopware-platform-plugin",
+    "autoload": {
+        "psr-4": {
+            "MoorlFormsExample\\": "src/"
+        }
+    },
+    "extra": {
+        "shopware-plugin-class": "MoorlFormsExample\\MoorlFormsExample",
+        "copyright": "(c) by moori",
+        "label": {
+            "de-DE": "Formular Baukasten 2 | Beispiel Add-On",
+            "en-GB": "Form builder 2 | Example Add-On"
+        },
+        "description": {
+            "de-DE": "Formular Baukasten 2 | Beispiel Add-On",
+            "en-GB": "Form builder 2 | Example Add-On"
+        },
+        "manufacturerLink": {
+            "de-DE": "https://docs.moori.net/",
+            "en-GB": "https://docs.moori.net/"
+        },
+        "supportLink": {
+            "de-DE": "https://docs.moori.net/",
+            "en-GB": "https://docs.moori.net/"
+        }
+    }
+}

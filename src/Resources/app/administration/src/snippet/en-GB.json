@@ -1,0 +1,23 @@
+{
+    "moorl-fb": {
+        "properties": {},
+        "errors": {},
+        "placeholder": {},
+        "notification": {},
+        "cards": {
+            "example": "Example card"
+        },
+        "buttons": {},
+        "options": {
+            "elementTypes": {
+                "example": "Example element type"
+            },
+            "formActions": {
+                "example": "Example form action"
+            },
+            "formTypes": {
+                "example": "Example form type"
+            }
+        }
+    }
+}

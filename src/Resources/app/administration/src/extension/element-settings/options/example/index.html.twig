@@ -1,0 +1,19 @@
+{% block moorl_fb_element_settings_tab_general_content %}
+    {% parent %}
+
+    <sw-card v-if="elementOption('example')"
+             :isLoading="isLoading"
+             :title="$tc('moorl-fb.cards.example')">
+        <sw-container columns="repeat(auto-fit, minmax(300px, 1fr))" gap="0px 15px">
+            <sw-field
+                    :label="$tc('moorl-fb.properties.custom1')"
+                    v-model="element.custom1"
+            />
+
+            <sw-field
+                    :label="$tc('moorl-fb.properties.exampleValue')"
+                    v-model="element.config.exampleValue"
+            />
+        </sw-container>
+    </sw-card>
+{% endblock %}

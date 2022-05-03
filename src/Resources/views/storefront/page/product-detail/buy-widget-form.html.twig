@@ -1,0 +1,13 @@
+{% sw_extends '@Storefront/storefront/page/product-detail/buy-widget-form.html.twig' %}
+
+{% block page_product_detail_buy_form_inner %}
+    {{ parent() }}
+
+    {% if page.product.extensions.MoorlFormsExample %}
+        <div class="mt-3">
+            {% for form in page.product.extensions.MoorlFormsExample %}
+                {% sw_include "@MoorlForms/plugin/moorl-fb/component/form/index.html.twig" %}
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}

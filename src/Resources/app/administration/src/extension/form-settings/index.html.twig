@@ -1,0 +1,26 @@
+{% block moorl_fb_form_settings_tab_general_content %}
+    {% parent %}
+
+    <sw-card :title="$tc('moorl-fb.cards.example')"
+             :isLoading="isLoading">
+        <template v-if="formAction('example')">
+            <sw-container columns="repeat(auto-fit, minmax(300px, 1fr))" gap="0px 15px">
+                <sw-field
+                        :label="$tc('moorl-fb.properties.custom1')"
+                        v-model="form.custom1"
+                />
+
+                <sw-field
+                        :label="$tc('moorl-fb.properties.exampleValue')"
+                        v-model="form.config.exampleValue"
+                />
+            </sw-container>
+        </template>
+
+        <template v-else>
+            <sw-alert variant="info">
+                {{ $tc('moorl-fb.notification.disabled') }}
+            </sw-alert>
+        </template>
+    </sw-card>
+{% endblock %}
